@@ -1,3 +1,3 @@
-function dotfiles --wraps='/usr/bin/git --git-dir=/home/cass.cfg --work-tree=/home/cass' --wraps='/usr/bin/git --git-dir=/home/cass/.dotfiles --work-tree=/home/cass' --description 'alias dotfiles=/usr/bin/git --git-dir=/home/cass/.dotfiles --work-tree=/home/cass'
-  /usr/bin/git --git-dir=/home/cass/.dotfiles --work-tree=/home/cass $argv; 
+function dotfiles --wraps='git --git-dir=$HOME.cfg --work-tree=$HOME' --wraps='git --git-dir=$HOME/.dotfiles --work-tree=$HOME' --wraps='git --git-dir=~/.dotfiles --work-tree=~' --wraps='git --git-dir=$HOME/.dotfiles --work-tree=~' --wraps='git --git-dir=$HOME/.dotfiles --work-tree=$HOME' --description 'alias dotfiles=git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+  git --git-dir=$HOME/.dotfiles --work-tree=$HOME $argv; 
 end
