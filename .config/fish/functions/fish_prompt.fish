@@ -28,7 +28,7 @@ function fish_prompt --description Aphrodite
 	echo -n (set_color brblack)'@'
 	echo -n (set_color brblue)(prompt_hostname)
 	echo -n (set_color brblack)':'
-	echo -n (set_color normal)(prompt_pwd -D 64)
+	echo -n (set_color normal)(prompt_pwd)
 	echo -n ' '
 
 	set -l git_branch (git --no-optional-locks branch --show-current 2> /dev/null)
@@ -38,10 +38,10 @@ function fish_prompt --description Aphrodite
 		set -l git_branch_color brgreen
 		test -n "$git_status"; and set git_branch_color bryellow
 
-		echo -n "$(set_color $git_branch_color)‹"$git_branch"›"
+		echo -n "(set_color git_branch_color)‹"$git_branch"›"
 	end
 
-	set -q APHRODITE_THEME_SHOW_TIME; and echo -n "$(set_color brblack) [$(date +%H:%M:%S)]"
+	set -q APHRODITE_THEME_SHOW_TIME; and echo -n "(set_color brblack) [(date +%H:%M:%S)]"
 
 	echo  # new line
 
